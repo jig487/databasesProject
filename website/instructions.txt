@@ -1,0 +1,3 @@
+go into my-react-app and open cmd
+
+run 'npm run dev'
