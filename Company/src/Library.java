@@ -31,37 +31,6 @@ public class Library {
 				System.out.println(e);
 			}
 			  
-			/* STEP FIVE: Encapsulation and prepareStatements */
-			 
-			ResultSet results = db.employeeLookup("123-54-6799");
-			if(results.next()) {
-				String ssn = results.getString("SSN");
-				double salary = results.getDouble("Salary");
-				String firstName = results.getString("FirstName");
-				String middleName = results.getString("MiddleName");
-				String lastName = results.getString("LastName");
-				
-				Employee e = new Employee(ssn, salary, firstName, middleName, lastName);
-				
-				System.out.println(e.toString());
-			}
-		
-			/* END STEP FIVE */
-
-
-			/* STEP SIX: Database modification */
-			/* 
-			Employee e = new Employee("222-22-2222", 60000.00, "Edsger", "W.", "Dijkstra");
-			db.insertEmployee(e);
-			
-			System.out.println();
-			
-			db.updateEmployeeSalary(e, 65000.00);
-			 
-			boolean result = db.deleteEmployee(e);
-			System.out.println(result);
-			*/
-			/* END STEP SIX */
 		} catch(SQLException e) {
 			System.out.println("Something went wrong!");
 			e.printStackTrace();
@@ -70,7 +39,6 @@ public class Library {
 		System.out.println("Successfully connected!");
 		
 		db.disconnect();
-		
 	}
 
 }

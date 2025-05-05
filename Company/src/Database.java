@@ -45,7 +45,7 @@ public class Database {
 		ResultSet results = stmt.executeQuery();
 		return results;
 	}
-	
+	/* 
 	public ResultSet employeeLookup(String ssn) throws SQLException {
 		String query = "SELECT * FROM Employee WHERE SSN = ?";
 		PreparedStatement stmt = connection.prepareStatement(query);
@@ -82,4 +82,5 @@ public class Database {
 		int numRowsAffected = stmt.executeUpdate();
 		return numRowsAffected > 0;
 	}
+	*/
 }
