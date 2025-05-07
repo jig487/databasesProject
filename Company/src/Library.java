@@ -7,13 +7,10 @@ public class Library {
 		Database db = new Database();
 		db.connect();
 		try {			
-			/* STEP FOUR: Run a select and get the results */
-
 			String query = "SELECT * FROM Book";
 			ResultSet results = db.runQuery(query);
 			 
 			ArrayList<Book> lst = new ArrayList<>();
-			
 			while(results.next()) {
 				String isbn = results.getString("ISBN");
 				String bookName = results.getString("BookName");
@@ -40,5 +37,4 @@ public class Library {
 		
 		db.disconnect();
 	}
-
 }
