@@ -8,7 +8,7 @@ public class Author {
         this.authorName = authorName;
 	}
 
-    public int getaid() {
+    public int getAid() {
         return this.aid;
     }
 
