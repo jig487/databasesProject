@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const CrudControllers = require('../app/controllers/CrudControllers');
+const PostControllers = require('../app/controllers/PostControllers');
 
 router
     .route('/')
-    .get(CrudControllers.getAllPosts)
-    .post(CrudControllers.createNewPost);
-router.route("/:id").get(CrudControllers.getAllBooks);
+    .get(PostControllers.getAllPosts)
+    .post(PostControllers.createNewPost);
+router.route("/:id").get(PostControllers.getAllBooks);
+
+module.exports = router;

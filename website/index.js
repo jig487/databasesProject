@@ -20,7 +20,7 @@ const sequelize = require('./config/database');
 const errorController = require('./app/controllers/ErrorController');
 
 env.config();
-app.use("/posts", postRoutes);
+app.use('/posts', postRoutes);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 

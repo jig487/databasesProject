@@ -4,7 +4,7 @@ const HomeController = require('../app/controllers/HomeController');
 const AuthController = require('../app/controllers/AuthController');
 const DatabaseController = require('../app/controllers/DatabaseController');
 
-//router.get('/', HomeController.homePage);
+router.get('/', HomeController.homePage);
 router.get('/login', AuthController.loginPage);
 router.post('/login', AuthController.login);
 router.post('/logout', AuthController.logout);
