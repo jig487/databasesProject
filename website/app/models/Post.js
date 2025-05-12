@@ -1,4 +1,4 @@
-const db = require('../../config/database');
+const db = require('../../config/db');
 
 class Post {
     constructor(isbn, bookName, rating, ratingCount, pages, publishYear) {
