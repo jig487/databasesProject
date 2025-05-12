@@ -15,10 +15,12 @@ const router = express.Router();
 
 //Loading Routes
 const webRoutes = require('./routes/web');
+const postRoutes = require('./routes/postRoutes');
 const sequelize = require('./config/database');
 const errorController = require('./app/controllers/ErrorController');
 
 env.config();
+app.use("/posts", postRoutes);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
