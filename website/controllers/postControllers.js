@@ -27,7 +27,7 @@ exports.createNewPost = async (req, res, next) => {
 
 exports.getPostByISBN = async (req, res, next) => {
   try {
-    let ISBN = req.body.ISBN;
+    let ISBN = req.params.ISBN;
     let [post, _] = await Post.findByISBN(ISBN);
 
     res.status(200).json({ post: post[0] });
