@@ -32,6 +32,10 @@ public class Database {
 		}
 	}
 
+	public Connection getConnection() {
+		return this.connection;
+	}	
+
 	public void disconnect() {
 		try {
 			connection.close();
@@ -285,7 +289,7 @@ public class Database {
 		return null;
 	}
 
-	public void updateBook(Book b) throws SQLException {
+	public void updateBook(Book b, String isbn) throws SQLException {
 		String sql = "UPDATE Book SET BookName = ?, Rating = ?, RatingCount = ?, Pages = ?, PublishYear = ? WHERE ISBN = ?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		stmt.setString(1, b.getBookName());
@@ -293,7 +297,7 @@ public class Database {
 		stmt.setInt(3, b.getRatingCount());
 		stmt.setInt(4, b.getPages());
 		stmt.setInt(5, b.getPublishYear());
-		stmt.setString(6, b.getIsbn());
+		stmt.setString(6, isbn);
 		stmt.executeUpdate();
 	}
 
@@ -335,10 +339,10 @@ public class Database {
 		stmt.executeUpdate();
 	}
 	
-	public boolean deleteBook(Book e) throws SQLException {
+	public boolean deleteBook(String isbn) throws SQLException {
 		String sql = "DELETE FROM Book WHERE ISBN = ?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setString(1, e.getIsbn());
+		stmt.setString(1, isbn);
 		int numRowsAffected = stmt.executeUpdate();
 		return numRowsAffected > 0;
 	}
