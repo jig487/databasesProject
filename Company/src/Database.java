@@ -1,11 +1,11 @@
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 public class Database {
 	private String url = "jdbc:mysql://138.49.184.47:3306/wateski3978_library?user=wateski3978&password=";
@@ -18,6 +18,7 @@ public class Database {
 		try {
 			encodedPassword = URLEncoder.encode(password, StandardCharsets.UTF_8.toString());
 			url = url + encodedPassword;
+			System.out.println(url);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
