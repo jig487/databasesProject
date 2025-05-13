@@ -12,7 +12,7 @@ class Post {
 
     async save() {
         let sql = `
-        INSERT INTO posts(
+        INSERT INTO Book(
             isbn,
             bookName,
             rating,
