@@ -1,7 +1,6 @@
 require("dotenv").config(); // ALLOWS ENVIRONMENT VARIABLES TO BE SET ON PROCESS.ENV SHOULD BE AT TOP
 
 const express = require("express");
-const bodyParser = require('body-parser');
 const app = express();
 
 // Middleware
