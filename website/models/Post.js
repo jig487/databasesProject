@@ -44,6 +44,24 @@ class Post {
 
     return db.execute(sql);
   }
+
+  static findByBookName(BookName) {
+    let sql = `SELECT * FROM Book WHERE BookName = ${BookName};`;
+
+    return db.execute(sql);
+  }
+
+  static findByRating(Rating) {
+    let sql = `SELECT * FROM Book WHERE Rating = ${Rating};`;
+
+    return db.execute(sql);
+  }
+
+  static findByPublishYear(PublishYear) {
+    let sql = `SELECT * FROM Book WHERE PublishYear = ${PublishYear};`;
+
+    return db.execute(sql);
+  }
 }
 
 module.exports = Post;

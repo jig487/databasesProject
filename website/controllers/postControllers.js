@@ -36,3 +36,39 @@ exports.getPostByISBN = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.getPostByBookName = async (req, res, next) => {
+  try {
+    let BookName = req.params.BookName;
+    let [post, _] = await Post.findByBookName(BookName);
+
+    res.status(200).json({ post: post[0] });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
+exports.getPostByRating = async (req, res, next) => {
+  try {
+    let Rating = req.params.Rating;
+    let [post, _] = await Post.findByRating(Rating);
+
+    res.status(200).json({ post: post[0] });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
+exports.getPostByPublishYear = async (req, res, next) => {
+  try {
+    let PublishYear = req.params.PublishYear;
+    let [post, _] = await Post.findByPublishYear(PublishYear);
+
+    res.status(200).json({ post: post[0] });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
